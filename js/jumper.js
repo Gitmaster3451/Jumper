@@ -99,7 +99,7 @@ var haveJumped = false;
 
 function getKeys() {
     //Jumping
-    if(engine.keysPressed[" "] && jumped < 0 && jumps > 0) {
+    if((engine.keysPressed[" "] || engine.keysPressed["ArrowUp"]) && jumped < 0 && jumps > 0) {
         playerRb.setForce(new Vector2(0, 0))
         playerRb.addForce(new Vector2(jumpingDir?-4:4, -11));
         jumped = jumpingDelay;
